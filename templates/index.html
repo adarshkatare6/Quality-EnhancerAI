@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Enhancer AI</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1> Quality Enhancer AI </h1>
+            <p> -------- Converting your low resolution image to higher graphics -------- </p>
+        </div>
+    </header>
+    <main>
+        <div class="card upload-card">
+            <h2>Upload Your Image</h2>
+            <form method="POST" enctype="multipart/form-data" class="upload-form" id="upload-form">
+                <div class="form-group">
+                    <input type="file" name="file" id="file-input" required>
+                </div>
+                <button type="submit" class="btn-upload" id="upload-btn">Upscale Now</button>
+            </form>
+
+            <!-- Loader (hidden by default) -->
+            <div id="loader" style="display: none; margin-top: 20px;">
+                <div class="spinner"></div>
+                <p class="loader-text">Takes some time depending on your uploaded image quality and size, be patient...</p>
+            </div>
+        </div>
+
+        {% if img_data %}
+        <div class="card output-card">
+            <h2>Upscaled Image</h2>
+            <div class="image-preview">
+                <img class="opImg" src="data:image/jpeg;base64,{{ img_data }}" alt="Upscaled Image">
+            </div>
+            <a href="download" class="btn-download" download="output_image.jpg">Download Image</a>
+        </div>
+        {% endif %}
+    </main>
+    <footer>
+        <p>© 2025 Quality Enhancer AI(AK). All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', function () {
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('upload-btn').disabled = true;
+            document.getElementById('upload-btn').style.opacity = '0.6';
+        });
+    </script>
+</body>
+</html>
