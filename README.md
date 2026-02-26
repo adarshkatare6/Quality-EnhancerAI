@@ -1,4 +1,4 @@
-# Quality-VisionAI
+# Quality-EnhancerAI
 This repo contains project or Computer vision that enhances lower quality images using GAN(Generative Adversarial Network) :)
 An AI-powered image upscaling web application built using **ESRGAN (Enhanced Super-Resolution GAN)** and deployed on Hugging Face Spaces.
 This application enhances low-resolution images by upscaling them 4× while preserving perceptual quality and fine details.
